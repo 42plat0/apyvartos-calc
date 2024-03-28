@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apyvartos skaičiuoklė</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="form">
+            <div class="cash-desk">
+                <p>Suma sistemoje: </p>
+                <input type="text" inputmode="numeric" id="system-cash">
+            </div>
+            <div class="box hundreds">
+                <p>100</p>
+                <input type="text" inputmode="numeric" id="hundreds">
+            </div>
+            <div class="box fifties">
+                <p>50</p>
+                <input type="text" inputmode="numeric" id="fifties">
+            </div>
+            <div class="box twenties">
+                <p>20</p>
+                <input type="text" inputmode="numeric" id="twenties">
+            </div>
+            <div class="box tens">
+                <p>10</p>
+                <input type="text" inputmode="numeric" id="tens">
+            </div>
+            <div class="box fives">
+                <p>5</p>
+                <input type="text" inputmode="numeric" id="fives">
+            </div>
+            <div class="box twos">
+                <p>2</p>
+                <input type="text" inputmode="numeric" id="twos">
+            </div>
+            <div class="box ones">
+                <p>1</p>
+                <input type="text" inputmode="numeric" id="ones">
+            </div>
+            <div class="box fifty-cents">
+                <p>0.50</p>
+                <input type="text" inputmode="numeric" id="fifty-cents">
+            </div>
+            <div class="box twenty-cents">
+                <p>0.20</p>
+                <input type="text" inputmode="numeric" id="twenty-cents">
+            </div>
+            <div class="box ten-cents">
+                <p>0.10</p>
+                <input type="text" inputmode="numeric" id="ten-cents">
+            </div>
+            <div class="box five-cents">
+                <p>0.05</p>
+                <input type="text" inputmode="numeric" id="five-cents">
+            </div>
+            <div class="box two-cents">
+                <p>0.02</p>
+                <input type="text" inputmode="numeric" id="two-cents">
+            </div>
+            <div class="box one-cent">
+                <p>0.01</p>
+                <input type="text" inputmode="numeric" id="one-cent">
+            </div>
+                <button type="submit" id="calculate">Apskaičiuoti</button>
+        <div id="result" class="hidden">
+            <table >
+                <thead>
+                    <tr class="title">
+                        <th>Kupiūra<hr></th>
+                        <th>Kiekis<hr></th>
+                        <th>Iš viso<hr></th>
+                    </tr>
+                </thead>
+                <tbody>  
+                </tbody>
+
+                <tfoot>
+                    <tr><td colspan="3" id="line"></td> </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
