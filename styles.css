@@ -27,7 +27,7 @@ body{
 }
 input[type="text"]{
     color: blue;
-    width: 35%;
+    width: 30%;
     height: 2em;
     text-align: center;
     border-radius: 5px;
