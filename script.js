@@ -3,6 +3,7 @@ let calculateBtn = document.querySelector("#calculate")
 let boxes = document.querySelectorAll(".box")
 let table = document.querySelector("#result")
 let resultTable = document.querySelector("tbody");
+let moneyDrawer = document.querySelectorAll(".in-drawer")
 
 let cashInSystem = document.querySelector("#system-cash")
 
@@ -13,7 +14,6 @@ let denominationSum = [];
 let createTable = document.createElement("table");
 let differenceTable = document.createElement("table");
 let div = document.createElement("div")
-
 
 window.addEventListener("load", (event)=>{
     values.forEach(element => {
@@ -33,7 +33,14 @@ calculateBtn.addEventListener("click", ()=>{
             //how many denominations there are, picks out input value
         let denominationCount = Math.floor(Number(element.children["1"].value))
             //get value of each denomination and its count
-        let totalOfDenomination = (denomination * denominationCount)
+        let totalOfDenomination
+        
+        if (!isNaN(denomination)){
+            totalOfDenomination = (denomination * denominationCount)
+        }
+        else{
+            totalOfDenomination = denominationCount
+        }
 
         if(!isNaN(denominationCount)){
             if(denominationCount !== 0){
@@ -43,7 +50,12 @@ calculateBtn.addEventListener("click", ()=>{
                         tableRow.appendChild(tableData);
                         switch(i){
                             case 0:
-                                tableData.innerText = `${denomination} € ×`
+                                if (denomination){
+                                    tableData.innerText = `${denomination} € ×`
+                                }
+                                else{
+                                    tableData.innerText = `${element.innerText}`
+                                }
                                 break;
                             case 1:
                                 tableData.innerText = `${denominationCount}`
@@ -123,7 +135,7 @@ calculateBtn.addEventListener("click", ()=>{
                         break;
                     case 2:
                         let result = totalSum - cashInSystem.value;
-                        if(result > 0){
+                        if(result >= 0){
                             dataDifference.innerHTML = `<span style="color: green;">Pliusas: </span> <strong> ${result.toFixed(2)}€ </strong>`
                         }
                         else{
